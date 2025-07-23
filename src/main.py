@@ -1,13 +1,23 @@
 from langgraph.graph import StateGraph
-from graph import single_edge
+from graph import single_edge, cond_branch
 
 def hello_node(data):
     print("Hello, LangGraph!")
     return data
 
+
+# if __name__ == "__main__":
+#     app = single_edge.workflow.compile()
+#     final_state = app.invoke({"imput": "test "})
+#     print("Final result: ", final_state)
+
+
+# for cond_branch test
 if __name__ == "__main__":
-    single_edge_app = single_edge.workflow.compile()
-    single_edge_app.invoke({"imput": "test "})
+    app = cond_branch.workflow.compile()
+    # result = app.invoke({"input": "short"})
+    result = app.invoke({"input": "longlonglonglong"})
+    print(result)
 
 
 # if __name__ == "__main__":

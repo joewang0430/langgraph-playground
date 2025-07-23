@@ -2,11 +2,11 @@ from langgraph.graph import StateGraph
 
 def node_1(state):
     print("exe node 1")
-    return {"result": state["imput"] + "passed node 1 exe"}
+    return {"result": state["imput"] + "passed node 1 exe; "}
 
 def node_2(state):
     print("exe node 2")
-    return {"result": state["result"] + "then passed node 2 exe"}
+    return {"result": state["result"] + "then passed node 2 exe; "}
 
 # create workfow
 workflow = StateGraph(dict)
